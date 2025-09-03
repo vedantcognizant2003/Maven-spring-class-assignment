@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--bean is used to specify what object of what class should be made-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+<!--autowiring keyword to include inject a object of other class automatically-->
+    <bean id="vehicle1" class="org.example.myVehicle" autowire="byType">
+<!--        <constructor-arg ref="myCar"/>-->
+        <property name="myCar" ref="myCar"/>
+    </bean>
+
+    <bean id="myCar" class="org.example.Car">
+
+    </bean>
+
+    <bean id="wired" class="org.example.AutoWiring">
+
+    </bean>
+
+</beans>
